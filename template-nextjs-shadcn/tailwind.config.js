@@ -5,12 +5,13 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
   ],
+  darkMode: "class",
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        sm: "1000px",
       },
     },
     extend: {
