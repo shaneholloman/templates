@@ -47,7 +47,7 @@ export default function Chat() {
           Connected as <strong className="font-bold">{author}</strong>
         </div>
       </header>
-      <main className="z-10 flex flex-col overflow-hidden rounded-3xl border-4 border-slate-500 bg-slate-200 p-4 dark:border-slate-700 dark:bg-slate-800">
+      <main className="flex flex-col overflow-hidden rounded-3xl border-4 border-slate-500 bg-slate-200 p-4 dark:border-slate-700 dark:bg-slate-800">
         <ol
           ref={messageListRef}
           className="flex grow flex-col gap-2 overflow-y-auto scroll-smooth border-b border-slate-500 pb-2"
