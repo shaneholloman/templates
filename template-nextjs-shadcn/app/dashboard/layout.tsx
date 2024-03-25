@@ -29,10 +29,7 @@ export default function DashboardLayout({
           </Link>
         </nav>
       </aside>
-      <div className="grow">
-        <h2 className="mb-2 text-4xl font-bold">Dashboard</h2>
-        {children}
-      </div>
+      <div className="grow">{children}</div>
     </div>
   );
 }

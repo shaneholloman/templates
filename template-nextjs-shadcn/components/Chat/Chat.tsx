@@ -40,14 +40,11 @@ export default function Chat() {
   }, [messages]);
 
   return (
-    <div className="flex h-full max-h-[40rem] flex-col overflow-hidden">
-      <header className="relative top-5 flex flex-col items-center rounded-t-3xl bg-slate-500 p-4 pb-8 dark:bg-slate-700">
-        <div className="mb-2 text-4xl text-white">Chat App</div>
-        <div className="text-center text-lg font-light text-slate-200">
-          Connected as <strong className="font-bold">{author}</strong>
-        </div>
+    <div className="flex h-full max-h-[40rem] flex-col overflow-hidden rounded-sm border-2 border-slate-500 bg-slate-200 dark:border-slate-800 dark:bg-slate-900">
+      <header className="flex flex-col items-center bg-slate-500 p-4 dark:bg-slate-800">
+        <div className="text-4xl font-semibold text-white">Chat App</div>
       </header>
-      <main className="flex flex-col overflow-hidden rounded-3xl border-4 border-slate-500 bg-slate-200 p-4 dark:border-slate-700 dark:bg-slate-800">
+      <main className="flex flex-col overflow-hidden p-4">
         <ol
           ref={messageListRef}
           className="flex grow flex-col gap-2 overflow-y-auto scroll-smooth border-b border-slate-500 pb-2"
@@ -60,10 +57,12 @@ export default function Chat() {
                 "items-start self-start": message.author !== author,
               })}
             >
-              <div className="mb-1 text-sm font-bold">{message.author}</div>
+              <div className="mb-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+                {message.author}
+              </div>
               <p
                 className={classNames(
-                  "rounded-xl bg-white p-2 dark:bg-slate-900",
+                  "rounded-xl bg-white p-2 dark:bg-slate-950",
                   {
                     "rounded-tr-none": message.author === author,
                     "rounded-tl-none": message.author !== author,
@@ -80,16 +79,17 @@ export default function Chat() {
             value={newMessageText}
             onChange={(event) => setNewMessageText(event.target.value)}
             placeholder="Write a message…"
-            className="grow rounded-l-lg border border-slate-300 bg-white p-2 outline-none focus:border-slate-600 dark:border-slate-700 dark:bg-slate-950"
+            className="grow rounded-l border-2 border-r-0 border-slate-300 p-2 outline-none transition-colors dark:border-slate-800 dark:bg-slate-950"
           />
           <button
             type="submit"
             disabled={newMessageText === ""}
             className={classNames(
-              "rounded-r-lg px-6 py-2 text-white outline-none",
+              "rounded-r px-6 py-2 font-semibold outline-none transition-colors",
               {
-                "bg-slate-400 dark:bg-slate-700": newMessageText === "",
-                "bg-slate-800 hover:bg-slate-950 focus:bg-slate-950 dark:bg-slate-700":
+                "bg-slate-300 text-slate-400 dark:bg-slate-800 dark:text-slate-600":
+                  newMessageText === "",
+                "bg-slate-400 text-slate-700 hover:bg-slate-500 hover:text-black dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600 dark:hover:text-white":
                   newMessageText !== "",
               },
             )}

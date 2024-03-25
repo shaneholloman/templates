@@ -52,7 +52,7 @@ export default function RootLayout({
                     </Link>
                     <ThemeToggle />
                     <Link href="/dashboard">
-                      <Button>Dashboard</Button>
+                      <Button>Chat App</Button>
                     </Link>
                   </nav>
                 </div>
