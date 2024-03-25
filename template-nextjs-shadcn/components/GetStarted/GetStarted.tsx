@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Code } from "../typography/code";
+import { Code } from "../Code";
 import { Resource } from "./Resource";
 
 export const GetStarted = () => {

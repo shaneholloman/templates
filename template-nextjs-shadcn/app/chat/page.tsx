@@ -5,8 +5,9 @@ import { api } from "../../convex/_generated/api";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { faker } from "@faker-js/faker";
 import classNames from "classnames";
+import clsx from "clsx";
 
-export default function Chat() {
+export default function ChatPage() {
   const [author, setAuthor] = useState<string>();
   const [newMessageText, setNewMessageText] = useState("");
   const messageListRef = useRef<HTMLOListElement>(null);
@@ -52,7 +53,7 @@ export default function Chat() {
           {messages?.map((message) => (
             <li
               key={message._id}
-              className={classNames("flex flex-col", {
+              className={clsx("flex flex-col", {
                 "items-end self-end": message.author === author,
                 "items-start self-start": message.author !== author,
               })}
@@ -61,13 +62,10 @@ export default function Chat() {
                 {message.author}
               </div>
               <p
-                className={classNames(
-                  "rounded-xl bg-white p-2 dark:bg-slate-950",
-                  {
-                    "rounded-tr-none": message.author === author,
-                    "rounded-tl-none": message.author !== author,
-                  },
-                )}
+                className={clsx("rounded-xl bg-white p-2 dark:bg-slate-950", {
+                  "rounded-tr-none": message.author === author,
+                  "rounded-tl-none": message.author !== author,
+                })}
               >
                 {message.body}
               </p>
@@ -84,7 +82,7 @@ export default function Chat() {
           <button
             type="submit"
             disabled={newMessageText === ""}
-            className={classNames(
+            className={clsx(
               "rounded-r px-6 py-2 font-semibold outline-none transition-colors",
               {
                 "bg-slate-300 text-slate-400 dark:bg-slate-800 dark:text-slate-600":

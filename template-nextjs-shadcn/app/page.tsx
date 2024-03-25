@@ -1,7 +1,7 @@
 "use client";
 
-import { GetStarted } from "@/components/Starter/GetStarted";
+import { GetStarted } from "@/components/GetStarted/GetStarted";
 
-export default function Home() {
+export default function HomePage() {
   return <GetStarted />;
 }

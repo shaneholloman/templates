@@ -1,12 +1,12 @@
-import { ConvexLogo } from "@/components/Starter/ConvexLogo";
+import { ConvexLogo } from "@/components/GetStarted/ConvexLogo";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import ConvexClientProvider from "./ConvexClientProvider";
+import ConvexClientProvider from "../components/ConvexClientProvider";
 import "./globals.css";
+import { Button } from "@/components/ui/button";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,7 +51,7 @@ export default function RootLayout({
                       Link 3
                     </Link>
                     <ThemeToggle />
-                    <Link href="/dashboard">
+                    <Link href="/chat">
                       <Button>Chat App</Button>
                     </Link>
                   </nav>
