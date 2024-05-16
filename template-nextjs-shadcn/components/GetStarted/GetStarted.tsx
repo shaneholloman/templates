@@ -30,7 +30,7 @@ export const GetStarted = () => {
             <Link href="https://docs.convex.dev/home">Convex docs</Link>
           </Button>
         </div>
-        <div className="flex flex-col gap-4 bg-slate-50 p-12 dark:bg-transparent">
+        <div className="flex flex-col gap-4 bg-muted/50 p-12 dark:bg-transparent">
           <h2 className="mb-1 text-center text-3xl font-bold md:text-4xl ">
             Next steps
           </h2>
